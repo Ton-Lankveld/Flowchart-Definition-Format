@@ -26,5 +26,8 @@ To define the grafical symbols, a Scalable Vector Graphic (SVG) file with the re
 The style of the symbols, or deviations to the default style, can be captured in a Cascading Style Sheet (CSS) file.
 The user of the render application can edit the SVG and CSS files to change the graphics.
 
+### Rendering
+For JavaScript [obfc.js]https://github.com/erdincuzun/obfc.js can be used to render the flowchart.
+
 ## Contribution
 If you got suggestions, comments or remarks, please mail them to []mailto:lankveal@xs4all.nl?subject:Flowchart-Definition-Format .
