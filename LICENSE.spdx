@@ -2,6 +2,6 @@ SPDXVersion: SPDX-2.1
 DataLicense: CC0-1.0
 PackageName: Flowchart Definition Format
 PackageOrginator: Ton van Lankveld
-PackageHomePage: ... (GitHub project url)
+PackageHomePage: https://github.com/Ton-Lankveld/Flowchart-Definition-Format
 PackageLicenseDeclared: MIT
 
