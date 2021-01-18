@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowchart xml:lang="en-US">
+  <title>Login Procedure</title>
+  <description>Login procedure for a website.</description>
+  <version>0.1.0</version>
+  <inoutput id="io01">
+    <text>Send inlog page to user</text>
+    <next>d01</next>
+  </inoutput>
+  <decision id="d01">
+    <condition>Inlog data posted?</condition>
+    <true>s01</true>
+    <false>p02</false>
+  </decision>
+  <process id="p02">
+    <text>Wait 1 second</text>
+    <next>d01</next>
+  </process>
+  <subprogram id="s01">
+    <name>Hash Password</name>
+    <next>db01</next>
+  </subprogram>
+  <database id="db01">
+    <text>Get username and stored passsword</text>
+    <next>d02</next>
+  </database>
+  <decision id="d02">
+    <condition>Known username?</condition>
+    <true>d03</true>
+    <false>p03</false>
+  </decision>
+  <decision id="d03">
+    <condition>Hashed password = stored password?</condition>
+    <true>s02</true>
+    <false>p03</false>
+  </decision>
+  <subprogram id="s02">
+    <name>Allow Access</name>
+    <next>end</next>
+  </subprogram>
+  <process id="p03">
+    <text>Wait 3 seconds</text>
+    <next>p04</next>
+  </process>
+  <process id="p04">
+    <text>Add error message</text>
+    <next>io01</next>
+  </process>
+  <annotation id="a01">
+    <text>HTML5 + CSS3</text>
+    <objectid>o01</objectid>
+  </annotation>
+  <annotation id="a02">
+    <text>SHA-3</text>
+    <objectid>s01</objectid>
+  </annotation>
+</flowchart>
+
