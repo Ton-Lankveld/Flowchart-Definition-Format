@@ -4,7 +4,7 @@
 Ton van Lankveld
 
 ## Version
-2021 January 17
+2021 January 19
 
 ## Description
 A XML file format to define the structure of a flowchart.
@@ -123,10 +123,10 @@ Short description.
 A test to compare 2 or more data values or conditions.
 
 `<true></true>`
-Id of the nest object, if the test of the condition is true. Or the text "end".
+Id of the next object, if the test of the condition is true. Or the text "end".
 
 `<false></false>`
-Id of the nest object, if the test of the condition is false. Or the text "end".
+Id of the next object, if the test of the condition is false. Or the text "end".
 
 `<name></name>`
 Name of the subprogram.
