@@ -4,13 +4,14 @@
 Ton van Lankveld
 
 ## Version
-2021 January 19
+2021 January 25
 
 ## Description
 A XML file format to define the structure of a flowchart.
 
 ## Scope
 This definition only describes the structure of the flowchart and **not** the lay-out or graphic rendering.
+Not only for the classic software development, but also for other work or process flows.
 
 ## License
 [MIT Opensource]https://opensource.org/licenses/MIT
@@ -137,6 +138,70 @@ Path to a flowchart file. Not only is this tag optional for `<subprogram>`, but 
 
 `<role></role>`
 In a process flowchart, parts of the process are dedicated to a department or role. Every object can have an optional "role" tag.
+
+## Extension
+### Options List
+In a work or process flow there are situations where options have to be considered. For example to analize a sales order. This can be done with a serie of Desicion objects, but that is not very effective. An Options List is shorter and more readable.
+Defines an options list and the way the options are selected.
+
+### Example Object
+```
+<optionslist id="">
+  <title></title>
+  <select></select>
+  <option>
+    <name></name>
+    <id></id>
+  </option>
+  <option>
+    <name></name>
+    <id></id>
+  </option>
+  <option>
+    <name></name>
+    <id></id>
+  </option>
+  <next></next>
+</optionslist>
+```
+
+### Tags
+`<title></title>`
+Title or name for this list. Optional.
+
+`<select></select>`
+Defines the number of option which must be selected. Requisted.
+Values: 0+ | 1+ | 1.
+  0+ = Zero or more options can be selected.
+  1+ = One or more options can be selected.
+  1 = Only one option can be selected.
+
+```
+<option>
+  <name></name>
+  <id></id>
+</option>
+  ```
+`<option>` can have an optional `<next></next>` to point to the next object. If so, all the options in this `<optionslist>` **must** have a `<next></next>`.
+`<option>` can have an optional attribute; status. Example: `status="default"`.
+Values: "default" | "selected".
+  default = Only one option in the `<optionslist>` can be the default selection.
+  selected = One or more `<option>` in the `<optionslist>` can have the attribute `status="selected"`.
+
+`<true></true>`
+Id of the next object, if the correct number of options is selected. Or the text "end".
+
+`<false></false>`
+Id of the next object, if the correct number of options is not selected. Or the text "end".
+
+`<next></next>`
+Id of the next object or the text "end".
+
+`<name></name>`
+Name of the option.
+
+`<id></id>`
+Unique identification of the option.
 
 ## References
 - [Wikipedia: Flowchart]https://en.wikipedia.org/wiki/Flowchart
