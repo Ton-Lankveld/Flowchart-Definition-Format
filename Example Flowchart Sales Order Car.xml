@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowchart xml:lang="en-US">
+  <title>Sales Order for Car</title>
+  <description>The options for the sales of a car</description>
+  <version>1.0.4</version>
+  <optionslist id="mod01">
+    <title>Model</title>
+    <select>1</select>
+    <option>
+      <name>Standard</name>
+      <id>ST-02-43</id>
+      <next>mot01</next>
+    </option>
+    <option>
+      <name>Sedan</name>
+      <id>ST-02-12</id>
+      <next>mot02</next>
+    </option>
+    <option>
+      <name>Coupe</name>
+      <id>ST-02-37</id>
+      <next>mot03</next>
+    </option>
+  </optionslist>
+  <optionslist id="mot01">
+    <title>Motor</title>
+    <select>1</select>
+    <option>
+      <name>1.4L</name>
+      <id>mer-1400LE</id>
+    </option>
+    <option>
+      <name>1.6L</name>
+      <id>mer-1600LE</id>
+    </option>
+    <option>
+      <name>2.0L</name>
+      <id>bmw-V6-2000S</id>
+    </option>
+    <next>do01</next>
+  </optionslist>
+  <optionslist id="do01">
+    <title>Doors</title>
+    <select>1</select>
+    <option>
+      <name>3</name>
+      <id>doors3</id>
+    </option>
+    <option>
+      <name>5</name>
+      <id>doors5</id>
+    </option>
+    <next>col01</next>
+  </optionslist>
+  <optionslist id="col01">
+    <title>Color</title>
+    <select>1</select>
+    <option>
+      <name>Black</name>
+      <id>BWX587523</id>
+    </option>
+    <option>
+      <name>Silver</name>
+      <id>BWX857770</id>
+    </option>
+    <option>
+      <name>White</name>
+      <id>BWX365221</id>
+    </option>
+    <option>
+      <name>Red</name>
+      <id>BWX658147</id>
+    </option>
+    <option>
+      <name>Blue</name>
+      <id>BWX027361</id>
+    </option>
+    <option>
+      <name>Green</name>
+      <id>BWX335542</id>
+    </option>
+    <next>d01</next>
+  </optionslist>
+  <decision id="d01">
+    <condition>Fast Delivery?</condition>
+    <true>p01</true>
+    <false>end</false>
+  </decision>
+  <process id="p01">
+    <text>Fast Delivery</text>
+    <next>end</next>
+  </process>
+  <optionslist id="mot02">
+    <title>Motor</title>
+    <select>1</select>
+    <option>
+      <name>1.6L</name>
+      <id>mer-1600LE</id>
+    </option>
+    <option>
+      <name>2.0L</name>
+      <id>bmw-V6-2000S</id>
+    </option>
+    <next>p02</next>
+  </optionslist>
+  <process id="p02">
+    <text>5 Doors</text>
+    <next>col02</next>
+  </process>
+  <optionslist id="col02">
+    <title>Color</title>
+    <select>1</select>
+    <option>
+      <name>Black</name>
+      <id>BWX587523</id>
+    </option>
+    <option>
+      <name>Silver</name>
+      <id>BWX857770</id>
+    </option>
+    <option>
+      <name>White</name>
+      <id>BWX365221</id>
+    </option>
+    <option>
+      <name>Red</name>
+      <id>BWX658147</id>
+    </option>
+    <option>
+      <name>Blue</name>
+      <id>BWX027361</id>
+    </option>
+    <option>
+      <name>Green</name>
+      <id>BWX335542</id>
+    </option>
+    <next>end</next>
+  </optionslist>
+  <optionslist id="mot03">
+    <title>Motor</title>
+    <select>1</select>
+    <option>
+      <name>1.6L</name>
+      <id>mer-1600LE</id>
+    </option>
+    <option>
+      <name>2.0L</name>
+      <id>bmw-V6-2000S</id>
+    </option>
+    <next>d02</next>
+  </optionslist>
+  <decision id="d02">
+    <condition>Turbo?</condition>
+    <true>p03</true>
+    <false>p04</false>
+  </decision>
+  <process id="p03">
+    <text>Turbo</text>
+    <next>p04</next>
+  </process>
+  <process id="p04">
+    <text>2 Doors</text>
+    <next>col02</next>
+  </process>
+  <optionslist id="col03">
+    <title>Color</title>
+    <select>1</select>
+    <option>
+      <name>Black</name>
+      <id>BWX587523</id>
+    </option>
+    <option>
+      <name>Silver</name>
+      <id>BWX857770</id>
+    </option>
+    <option>
+      <name>White</name>
+      <id>BWX365221</id>
+    </option>
+    <option>
+      <name>Red</name>
+      <id>BWX658147</id>
+    </option>
+    <option>
+      <name>Blue</name>
+      <id>BWX027361</id>
+    </option>
+    <option>
+      <name>Green</name>
+      <id>BWX335542</id>
+    </option>
+    <next>oth01</next>
+  </optionslist>
+  <optionslist id="oth01">
+    <title>Other Options</title>
+    <select>0+</select>
+    <option>
+      <name>Leather</name>
+      <id>x201</id>
+    </option>
+    <option>
+      <name>Fast Delivery</name>
+      <id>Fast Delivery</id>
+    </option>
+    <next>end</next>
+  </optionslist>
+</flowchart>
+
