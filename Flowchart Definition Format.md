@@ -4,7 +4,7 @@
 Ton van Lankveld
 
 ## Version
-2021 January 25
+2021 March 2
 
 ## Description
 A XML file format to define the structure of a flowchart.
@@ -87,6 +87,25 @@ Named subprogram or process, which is defined elsewhere.
 ```
 Data file or database.
 
+### Document
+```
+<document id="">
+  <title></title>
+  <reference></reference>
+  <next></next>
+</document>
+```
+One document.
+
+### Multi-document
+```
+<multidocument id="">
+  <text></text>
+  <next></next>
+</multidocument>
+```
+More then one document.
+
 ### Annotation
 ```
 <annotation id="">
@@ -102,7 +121,6 @@ These flowchart symbols have no object representation in this definition:
 - Terminal (Start/End)
 - On-page connector
 - Off-page connector
-- Document(s)
 - Manual operation/input
 - Preparation or initialization
 
@@ -120,6 +138,9 @@ Id of the next object or the text "end".
 `<text></text>`
 Short description.
 
+`<title></title>`
+Know title of document or process.
+
 `<condition></condition>`
 A test to compare 2 or more data values or conditions.
 
@@ -135,6 +156,9 @@ Optional: If name not found, then follow link to name of sub-flowchart.
 
 `<link></link>`
 Path to a flowchart file. Not only is this tag optional for `<subprogram>`, but can also be used in an other object.
+
+`<reference></reference>`
+Unique identification of document or other entity.
 
 `<role></role>`
 In a process flowchart, parts of the process are dedicated to a department or role. Every object can have an optional "role" tag.
