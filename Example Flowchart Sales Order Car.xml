@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<flowchart xml:lang="en-US">
+<flowchartstructure xml:lang="en-US">
   <title>Sales Order for Car</title>
   <description>The options for the sales of a car</description>
   <version>1.0.4</version>
@@ -204,5 +204,5 @@
     </option>
     <next>end</next>
   </optionslist>
-</flowchart>
+</flowchartstructure>
 
