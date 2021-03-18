@@ -4,10 +4,11 @@
 As I could not find a good (XML) file format to define a flowchart, I scratched my brain itch and designed my own. Feel free to ignore it.
 
 ## Scope
-The definition only describes the structure of the flowchart and **not** the graphic rendering. Not only for the classic software development, but also for other work or process flows.
+The definition only describes the structure of the flowchart and **not** the graphic rendering. Not only for the classic software development, but also for work or process flows.
 
 ## To-Do
 - Define Document Type Definition (DTD) or XML Schema Definition (XSD).
+- Create tools/applications to analyze DTD's.
 
 ## Discussions
 ### Start Object
