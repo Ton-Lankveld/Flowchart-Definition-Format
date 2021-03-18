@@ -4,14 +4,15 @@
 Ton van Lankveld
 
 ## Version
-2021 March 2
+2021 March 18
 
 ## Description
 A XML file format to define the structure of a flowchart.
+The data or process flows in one direction.
 
 ## Scope
 This definition only describes the structure of the flowchart and **not** the lay-out or graphic rendering.
-Not only for the classic software development, but also for other work or process flows.
+Not only for the classic software development, but also for work or process flows.
 
 ## License
 [MIT Opensource]https://opensource.org/licenses/MIT
@@ -28,13 +29,13 @@ If the natural language in an object is an other then the default, as defined in
 
 ### Top Level
 ```
-<flowchart xml:lang="">
+<flowchartstructure xml:lang="">
   <title></title>
   <description></description>
   <version></version>
   -
   -
-</flowchart>
+</flowchartstructure>
 ```
 Top tage of the chart definition.
 Attributes:
