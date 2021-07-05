@@ -4,15 +4,14 @@
 Ton van Lankveld
 
 ## Version
-2021 March 18
+2021 July 5
 
 ## Description
 A XML file format to define the structure of a flowchart.
-The data or process flows in one direction.
 
 ## Scope
 This definition only describes the structure of the flowchart and **not** the lay-out or graphic rendering.
-Not only for the classic software development, but also for work or process flows.
+Not only for classic software development, but also for other work or process flows.
 
 ## License
 [MIT Opensource]https://opensource.org/licenses/MIT
@@ -54,12 +53,14 @@ Represents a set of operations that changes value, form, or location of data.
 ### Decision
 ```
 <decision id="">
+  <text></text>
   <condition></condition>
   <true></true>
   <false></false>
 </decision>
 ```
 A conditional operation, that determines which one of the two paths the program will take. The operation is a true/false test.
+The text-tag is optional.
 
 ### In- and Output
 ```
@@ -74,10 +75,12 @@ Indicates the process of inputting data or outputting data, as in entering data 
 ```
 <subprogram id="">
   <text></text>
+  <link></link>
   <next></next>
 </subprogram>
 ```
 Named subprogram or process, which is defined elsewhere.
+The link-tag points the an other FDF-file. Optional.
 
 ### Database or File
 ```
@@ -119,9 +122,9 @@ Additional information about a step in the program.
 
 ## Other ANSI/ISO Symbols
 These flowchart symbols have no object representation in this definition:
-- Terminal (Start/End)
-- On-page connector
-- Off-page connector
+- Terminal (Start/End). See: General Comments
+- On-page connector. Not applicable
+- Off-page connector. A FDF-file contance a compleet flowchart
 - Manual operation/input
 - Preparation or initialization
 
@@ -156,13 +159,16 @@ Name of the subprogram.
 Optional: If name not found, then follow link to name of sub-flowchart.
 
 `<link></link>`
-Path to a flowchart file. Not only is this tag optional for `<subprogram>`, but can also be used in an other object.
+Path to a FDF-file. Not only is this tag optional for `<subprogram>`, but can also be used in an other object.
 
 `<reference></reference>`
 Unique identification of document or other entity.
 
 `<role></role>`
 In a process flowchart, parts of the process are dedicated to a department or role. Every object can have an optional "role" tag.
+
+`<...></...>`
+Custom tag.  **Must** be valid XML.
 
 ## Extension
 ### Options List
@@ -192,14 +198,15 @@ Defines an options list and the way the options are selected.
 
 ### Tags
 `<title></title>`
-Title or name for this list. Optional.
+Title or name for this list. Required.
 
 `<select></select>`
-Defines the number of option which must be selected. Requisted.
-Values: 0+ | 1+ | 1.
+Defines the number of option which must be selected. Required.
+Values: 0+ | 1+ | 1 | 0/1
   0+ = Zero or more options can be selected.
   1+ = One or more options can be selected.
   1 = Only one option can be selected.
+  0/1 = Zero exclusive or 1 options can be selected.
 
 ```
 <option>
@@ -233,4 +240,3 @@ Unique identification of the option.
 - [W3C: Extensible Markup Language]https://www.w3.org/XML/
 - [ISO 639-1 - Natural language Codes]https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 - [ISO 3166 - Country Codes]https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-
