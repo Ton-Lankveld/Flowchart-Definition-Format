@@ -243,7 +243,7 @@ In case `<select>` = 0/1; Id of the next object, if one (1) option is selected.
 - In case of `<select>` value is 1 or 0/1; stop search in list if an option is found en go to object in `<next>`.
 
 ### Graphic Examples
-![alt Three examples of the options-list object](pictures/FDF-Options-List-Graphics-Examples.svg)
+![alt Three examples of the options-list object](./pictures/FDF-Options-List-Graphics-Examples.svg)
 
 
 ## References
