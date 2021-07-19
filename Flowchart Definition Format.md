@@ -4,7 +4,7 @@
 Ton van Lankveld
 
 ## Version
-2021 July 5
+2021 July 19
 
 ## Description
 A XML file format to define the structure of a flowchart.
@@ -218,13 +218,7 @@ Values: 0+ | 1+ | 1 | 0/1
 `<option>` can have an optional attribute; status. Example: `status="default"`.
 Values: "default" | "selected".
   default = Only one option in the `<optionslist>` can be the default selection.
-  selected = One or more `<option>` in the `<optionslist>` can have the attribute `status="selected"`.
-
-`<true></true>`
-Id of the next object, if the correct number of options is selected. Or the text "end".
-
-`<false></false>`
-Id of the next object, if the correct number of options is not selected. Or the text "end".
+  selected = One or more (depends on <select> value) `<option>` in the `<optionslist>` can have the attribute `status="selected"`.
 
 `<next></next>`
 Id of the next object or the text "end".
@@ -234,6 +228,23 @@ Name of the option.
 
 `<id></id>`
 Unique identification of the option.
+
+`<next></next>`
+Id of the next object or the text "end".
+
+`<if-0></if-0>`
+In case <select> = 0/1; Id of the next object, if no (0) option is selected.
+
+`<if-1></if-1>`
+In case <select> = 0/1; Id of the next object, if one (1) option is selected.
+
+### Behaviour
+- If value(s) of <select> is not met, generate an error message.
+- In case of <select> value is 1 or 0/1; stop search in list if an option is found en go to object in <next>.
+
+### Graphic Examples
+![alt Three examples of the options-list object](pictures/FDF-Options-List-Graphics-Examples.svg)
+
 
 ## References
 - [Wikipedia: Flowchart]https://en.wikipedia.org/wiki/Flowchart
